@@ -6,6 +6,9 @@ const connectionString =
 
 const pool = new Pool({ connectionString });
 
+// Después de buscar, al parecer los parámetros no están habilitados para ORDER BY
+// Por ello, implementé esta parte del ejercicio utilizando pg-format
+
 const obtenerEstudiantesMayor = async (edad) => {
   const client = await pool.connect();
 
